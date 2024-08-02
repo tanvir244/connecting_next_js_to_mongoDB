@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         });
 
         try {
-            await client.connect();
+            // await client.connect();
 
             // Choose a name for your database
             const database = client.db("user_data_db");
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         } catch (error) {
             res.status(500).json({ message: "Something went wrong!" });
         } finally {
-            await client.close();
+            // await client.close();
         }
     } else {
         res.status(405).json({ message: "Method not allowed!" });
